@@ -12,9 +12,15 @@ const nextConfig: NextConfig = {
   // Moved from experimental in Next.js 15+
   outputFileTracingRoot: process.cwd(),
 
-  // Simple image configuration
+  // Image configuration with external domains
   images: {
     unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+    ],
   },
 
   // Basic performance settings
